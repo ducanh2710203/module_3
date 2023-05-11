@@ -7,33 +7,34 @@
 <style>
     body{
         width: 300px;
-        margin: auto;
-        margin-top: 200px
-    ;
+        margin: 200px auto auto;
     }
 </style>
 <body>
 <input type="number" name="" id="time" >
-<button onclick="chay()">countdown</button>
+<button onclick="down()">countdown</button>
 <p id="countdown"></p>
 </body>
 </html>
 <script >
-   function chay(){
-       let downTime = document.getElementById("time").value
-       if (downTime >=0){
-           let myinte =  setInterval(()=>{
-                 if (downTime<0) {
-                     document.getElementById("countdown").innerHTML = "end"
-                     document.getElementById("time").value = ""
-                     clearInterval(myinte)
-                 }else {
-                     document.getElementById("countdown").innerHTML = downTime--
-                 }
-           },1000)
-       }
+    let clicked = false
+   function down(){
+        if (!clicked) {
+            clicked = true;
+            let downTime = document.getElementById("time").value
+            if (downTime >=0){
+                let myInter =  setInterval(()=>{
+                    document.getElementById("countdown").innerHTML = downTime--
+                    if (downTime<0) {
+                        document.getElementById("countdown").innerHTML = "end"
+                        document.getElementById("time").value = ""
+                        clearInterval(myInter)
+                        clicked =false
+                    }
+                },1000)
+            }
+        }
+
     }
-
-
 
 </script>
