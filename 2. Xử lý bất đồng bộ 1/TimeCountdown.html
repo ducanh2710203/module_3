@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        width: 300px;
+        margin: auto;
+        margin-top: 200px
+    ;
+    }
+</style>
+<body>
+<input type="number" name="" id="time" >
+<button onclick="chay()">countdown</button>
+<p id="countdown"></p>
+</body>
+</html>
+<script >
+   function chay(){
+       let downTime = document.getElementById("time").value
+       if (downTime >=0){
+           let myinte =  setInterval(()=>{
+                 if (downTime<0) {
+                     document.getElementById("countdown").innerHTML = "end"
+                     document.getElementById("time").value = ""
+                     clearInterval(myinte)
+                 }else {
+                     document.getElementById("countdown").innerHTML = downTime--
+                 }
+           },1000)
+       }
+    }
+
+
+
+</script>
