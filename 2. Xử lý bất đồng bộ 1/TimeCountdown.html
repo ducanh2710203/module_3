@@ -24,7 +24,7 @@
             let downTime = document.getElementById("time").value
             if (downTime >=0){
                 let myInter =  setInterval(()=>{
-                    document.getElementById("countdown").innerHTML = downTime--
+                    document.getElementById("countdown").innerHTML =""+downTime--
                     if (downTime<0) {
                         document.getElementById("countdown").innerHTML = "end"
                         document.getElementById("time").value = ""
