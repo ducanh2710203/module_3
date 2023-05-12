@@ -4,7 +4,7 @@ return new Error("error roi e oi")
 
 
 }
-async function f() {
+async function test() {
     try{
         let result = await getDivision(2, 3);
         console.log(result)
@@ -13,7 +13,7 @@ async function f() {
         console.log(error);
     }
 }
-f();
+test();
 const promise = (a, b)=> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
